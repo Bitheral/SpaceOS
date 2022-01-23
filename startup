@@ -2,12 +2,15 @@
 local current_dir = "/" .. string.sub(shell.getRunningProgram(), 1, #shell.getRunningProgram()-11) .. "/"
 local width, height = term.getSize()
 
+current_user = {}
+
 
 os.loadAPI(current_dir .. "lib/json.lua")
 os.loadAPI(current_dir .. "lib/textapi.lua")
 os.loadAPI(current_dir .. "lib/sha256.lua")
 
 
+-- Show splash screen
 function splashscreen()
     term.clear()
 
@@ -19,6 +22,7 @@ function splashscreen()
     sleep(3)
 end
 
+-- Ask user to login or register
 function userlist()
     term.clear()
 
@@ -70,7 +74,8 @@ function userlist()
             textapi.printString(textapi.center_x, textapi.center_y + 1, "Password: ", true, false)
             password = read("*")
             if sha256.sha256(password) == user.password then
-                return user
+                fs.open(current_dir .. "data/.current_user.json", "w").write(json.encode(user)).close()
+                current_user = user
             else
                 textapi.printString(textapi.center_x, textapi.center_y + 2, "Incorrect password!", true)
                 sleep(2)
@@ -102,6 +107,12 @@ function userlist()
         usersFile.close()
     end
 end
+
+-- Show list of possible programs to run
+function optionList()
+    
+end
+
 
 splashscreen()
 userlist()
