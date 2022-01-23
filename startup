@@ -4,10 +4,14 @@ local width, height = term.getSize()
 
 current_user = {}
 
+for i = 1, #fs.list(current_dir .. "lib") do
+    os.loadAPI(current_dir .. "lib/" .. fs.list(current_dir .. "lib")[i])
+end
 
-os.loadAPI(current_dir .. "lib/json.lua")
-os.loadAPI(current_dir .. "lib/textapi.lua")
-os.loadAPI(current_dir .. "lib/sha256.lua")
+
+-- os.loadAPI(current_dir .. "lib/json.lua")
+-- os.loadAPI(current_dir .. "lib/textapi.lua")
+-- os.loadAPI(current_dir .. "lib/sha256.lua")
 
 
 -- Show splash screen
