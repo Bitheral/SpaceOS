@@ -1,9 +1,11 @@
 -- Get directory of this script
-local current_dir = "/" .. string.sub(shell.getRunningProgram(), 1, #shell.getRunningProgram()-11) .. "/"
+local current_dir = fs.getDir(shell.getRunningProgram()) .. "/"
+
 local width, height = term.getSize()
 
 current_user = {}
 
+print(current_dir .. "lib")
 for i = 1, #fs.list(current_dir .. "lib") do
     print("Loading", fs.list(current_dir .. "lib")[i])
     os.loadAPI(current_dir .. "lib/" .. fs.list(current_dir .. "lib")[i])
