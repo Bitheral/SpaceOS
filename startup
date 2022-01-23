@@ -86,7 +86,7 @@ function userlist()
             textapi.printString(textapi.center_x, textapi.center_y + 1, "Password: ", true, false)
             password = read("*")
             if sha256.sha256(password) == user.password then
-                logged_in_user = fs.open(current_dir .. "data/.current_user.json")
+                logged_in_user = fs.open(current_dir .. "data/.current_user.json", "w")
                 logged_in_user.write(json.encode(user))
                 logged_in_user.close()
                 current_user = user
