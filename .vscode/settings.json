@@ -1,0 +1,8 @@
+{
+    "Lua.diagnostics.globals": [
+        "term",
+        "center_x",
+        "center_y",
+        "cli"
+    ]
+}
