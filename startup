@@ -21,6 +21,11 @@ end
 function splashscreen()
     term.clear()
 
+    if not string.find(shell.path(), ":/programs") then
+        print("Inserting SpaceOS programs into path")
+        shell.setPath(shell.path()..":/programs")
+    end
+
     splash_img = paintutils.loadImage(current_dir .. "img/splash.nfp")
     paintutils.drawImage(splash_img, 0, 1)
 
