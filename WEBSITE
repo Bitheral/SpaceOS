@@ -1,10 +1,9 @@
 {
-  "body": "**SpaceOS** is custom operating system made for CraftOS in the Minecraft mod - ComputerCraft.",
+  "body": "**SpaceOS** is custom operating system made for the Minecraft mod ComputerCraft's CraftOS.",
   "name": "SpaceOS",
   "order": 8,
   "tags": [
     "Minecraft",
-    "ComputerCraft",
     "Addon"
   ]
 }
