@@ -3,6 +3,8 @@
   "name": "SpaceOS",
   "order": 9,
   "tags": [
-    "Minecraft"
+    "Minecraft",
+    "ComputerCraft",
+    "Addon"
   ]
 }
